@@ -553,7 +553,7 @@ class CouponService
 
         // 親カテゴリをテーブルから取得
         $ParentCategory = $this->app['eccube.repository.category']->find($Category->getParent());
-        if ($ParentCategory) {
+        if (!$ParentCategory) {
             return false;
         }
 
